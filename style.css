@@ -83,7 +83,7 @@ li a:hover::before{
 
 .visit-btn:hover{
     background: linear-gradient(to right, rgb(255,0,255), rgba(0, 157, 255));
-    transform: scale(1.03)
+    transform: scale(1.03);
 }
 
 /* =========== hero-section =========== */
@@ -229,7 +229,7 @@ section{
 .about-image img{
     width: 100%;
     border-radius: 5px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1)
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
 .about-text h3{
@@ -328,7 +328,7 @@ section{
 }
 
 ::-webkit-scrollbar-thumb{
-    background: linear-gradient(to bottom, #009dff, #ff00ff)
+    background: linear-gradient(to bottom, #009dff, #ff00ff);
 }
 
 /* =========== projects-section =========== */
@@ -404,7 +404,7 @@ section{
     padding: 2rem;
     margin-top: 3rem;
     border-radius: 5px;
-    border: 1px solid rgba(0, 0, 0, 0.2)
+    border: 1px solid rgba(0, 0, 0, 0.2);
 }
 
 .youtube p{
@@ -431,7 +431,7 @@ section{
 .contact-info, .contact-form{
     flex: 1;
     min-width: 300px;
-    text-align: center
+    text-align: center;
 }
 
 .contact-info h3, .contact-form h3, .build-together h3{
@@ -446,7 +446,7 @@ section{
 }
 
 .build-together h3{
-    color: #288fd3
+    color: #288fd3;
 }
 
 .contact-info p{
@@ -491,23 +491,6 @@ section{
 
 button[type="submit"]{
     font-size: 1.1rem;
-}
-
-.contact-announcement{
-    margin-top: 3rem;
-    background-color: #fff;
-    padding: 2rem;
-    border-radius: 1rem;
-    border: 1px solid rgba(0, 0, 0, 0.2)
-}
-
-.contact-announcement h3{
-    color: #288fd3;
-    margin-bottom: 1rem;
-}
-
-.contact-announcement p{
-    color: #555;
 }
 
 /* =========== footer-section =========== */
@@ -555,16 +538,7 @@ footer ul li a {
         flex-direction: column;
     }
 
-    .input-box input{
-        padding: 2rem 5rem;
-        font-size: 2.5rem;
-    }
-
     .input input::placeholder{
-        font-size: 2.5rem;
-    }
-
-    .input-box i{
         font-size: 2.5rem;
     }
 }
@@ -584,19 +558,6 @@ footer ul li a {
     }
 
     header .visit-btn{
-        display: none;
-    }
-
-    .input-box input{
-        padding: 1rem 2rem;
-        font-size: 1.8rem;
-    }
-
-    .input-box input::placeholder{
-        font-size: 1.5rem;
-    }
-
-    .input-box i{
         display: none;
     }
 
@@ -648,16 +609,6 @@ footer ul li a {
 
     .hero-container img{
         width: 80vw;
-    }
-
-    .input-box input{
-        padding: 0.5rem 3rem;
-        width: 80%;
-        font-size: 1.5rem;
-    }
-
-    .input-box input::placeholder{
-        font-size: 1.5rem;
     }
 
     footer ul{
