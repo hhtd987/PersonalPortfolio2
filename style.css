@@ -188,7 +188,19 @@ section{
 }
 
 .socials .social-icon:hover{
-    transform: scale(1.1)
+    transform: scale(1.1);
+}
+
+.socials .fa-youtube:hover{
+    color: #ff0000;
+}
+
+.socials .fa-linkedin:hover{
+    color: #0077B5;
+}
+
+.socials .fa-github:hover{
+    color: #000;
 }
 
 /* ============= about-section ============= */
@@ -231,9 +243,9 @@ section{
     color: #555;
 }
 
-/* =========== experience-section =========== */
+/* =========== skills-section =========== */
 
-#experience{
+#skills{
     background-color: #f0f0f0;
 }
 
@@ -244,14 +256,14 @@ section{
     margin-bottom: 3rem;
 }
 
-.experience-info{
+.skills-info{
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 5rem;
 }
 
-.experience img{
+.skills img{
     width: 24vw;
     border-radius: 3rem;
 }
@@ -367,6 +379,10 @@ section{
 .project-card h3{
     font-size: 2rem;
     font-weight: 500;
+}
+
+.project-card h4{
+    color: #288fd3;
 }
 
 .youtube-title{
@@ -535,7 +551,7 @@ footer ul li a {
         gap: 3rem;
     }
 
-    .experience-info{
+    .skills-info{
         flex-direction: column;
     }
 
@@ -588,7 +604,7 @@ footer ul li a {
         grid-template-columns: repeat(1,1fr);
     }
     
-    .experience-info img{
+    .skills-info img{
         width: 70vw;
     }
 }
