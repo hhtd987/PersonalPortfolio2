@@ -493,6 +493,75 @@ button[type="submit"]{
     font-size: 1.1rem;
 }
 
+/* =====================================================
+CONTACT FORM FEEDBACK
+===================================================== */
+
+/* Honeypot field
+Hidden from normal visitors but available to bots */
+.form-honeypot {
+position: absolute;
+left: -9999px;
+width: 1px;
+height: 1px;
+overflow: hidden;
+}
+
+/* Disabled submit button */
+button[type="submit"]:disabled {
+opacity: 0.6;
+cursor: not-allowed;
+transform: none;
+}
+
+/* Status message container */
+.contact-status {
+width: 100%;
+margin-top: 1rem;
+padding: 0;
+border-radius: 5px;
+font-size: 1rem;
+line-height: 1.5;
+text-align: center;
+transition: all 0.2s ease-in-out;
+}
+
+/* Loading */
+.contact-status.loading {
+padding: 12px 15px;
+background-color: #e8f4ff;
+border: 1px solid #288fd3;
+color: #1769aa;
+}
+
+/* Success */
+.contact-status.success {
+padding: 12px 15px;
+background-color: #eaf8ee;
+border: 1px solid #28a745;
+color: #217a35;
+}
+
+/* Error */
+.contact-status.error {
+padding: 12px 15px;
+background-color: #fff0f0;
+border: 1px solid #dc3545;
+color: #b02a37;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+
+
+.contact-status {
+    font-size: 0.95rem;
+}
+
+
+}
+
+
 /* =========== footer-section =========== */
 
 footer{

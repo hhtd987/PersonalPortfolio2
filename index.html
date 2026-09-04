@@ -15,7 +15,7 @@
 
             <ul class="nav-links">
                 <li><a href="#about">About</a></li>
-                <li><a href="#experience">Skills</a></li>
+                <li><a href="#skills">Skills</a></li>
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
@@ -69,7 +69,7 @@
             </div>
         </section>
 
-        <section class="skills" id="skills">
+        <section id="skills" class="skills">
             <h2 class="section-title">My Skills</h2>
 
             <div class="skills-info">
@@ -164,55 +164,88 @@
         </section>
 
         <section id = "contact">
-                    <!-- contact content will be here -->
+            <!-- contact content will be here -->
 
-                    <div class = "container">
-                        <h2 class = "section-title">Contact Me</h2>
+            <div class = "container">
+                <h2 class = "section-title">Contact Me</h2>
 
-                        <div class = "contact-content">
-                            <div class = "contact-info">
-                                <div class="build-together">
-                                    <h3>Let's Build Something Together</h3>
-                                    <p>I'm open to front-end development opportunities, freelance projects, collaborations, and programming-related work.</p>
-                                </div>
-                                <h3>Contact Information</h3>
-                                <p><i class = "fas fa-map-marker-alt"></i>Baghdad, Iraq</p>
-                                <p><i class = "fas fa-phone"></i>(+964) 7721-228887</p>
-                                <p><i class = "fas fa-envelope"></i>hhtd.987@gmail.com</p>
-                                <div class = "socials">
-                                    <a target = "_blank" href = 'https://github.com/hhtd987' class = "social-icon"><i class = "fab fa-github"></i></a>
-                                    <!-- <a target = "_blank" href = "https://web.facebook.com/hassan.abdulhadi.572757" class = "social-icon"><i class="fa-brands fa-facebook"></i></a> -->
-                                    <a target = "_blank" href = "https://www.linkedin.com/in/hasan-turki-43a60a215/" class = "social-icon"><i class="fa-brands fa-linkedin"></i></a>
-                                    <!-- <a target = "_blank" href = "https://x.com/HasanAbdulhadiT" class = "social-icon"><i class="fa-brands fa-x-twitter"></i></i></a> -->
-                                    <a target = "_blank" href = "https://www.youtube.com/@hasanabdulhadi8498" class = "social-icon"><i class="fa-brands fa-youtube"></i></i></a>
-                                </div>
-                            </div>
-
-                            <div class = "contact-form">
-                                <h3>Tell Me About Your Project</h3>
-                                <form id = "portfolio-contact-form">
-                                    <div class = "form-group">
-                                        <input type = "text" name = "name" placeholder = "Your Name" required>
-                                    </div>
-
-                                    <div class = "form-group">
-                                        <input type = "email" name = "email" placeholder = "Your Email" required>
-                                    </div>
-
-                                    <div class = "form-group">
-                                        <input type = "text" name = "subject" placeholder = "Subject" required>
-                                    </div>
-
-                                    <div class = "form-group">
-                                        <textarea name = "message" rows = "5" placeholder = "Your Message" required></textarea>
-                                    </div>
-
-                                    <button type = "submit" class = "btn">Send Message</button>
-                                </form>
-                            </div>
+                <div class = "contact-content">
+                    <div class = "contact-info">
+                        <div class="build-together">
+                            <h3>Let's Build Something Together</h3>
+                            <p>I'm open to front-end development opportunities, freelance projects, collaborations, and programming-related work.</p>
+                        </div>
+                        
+                        <h3>Contact Information</h3>
+                        <p><i class = "fas fa-map-marker-alt"></i>Baghdad, Iraq</p>
+                        <p><i class = "fas fa-phone"></i>(+964) 7721-228887</p>
+                        <p><i class = "fas fa-envelope"></i>hhtd.987@gmail.com</p>
+                        <div class = "socials">
+                            <a target = "_blank" href = 'https://github.com/hhtd987' class = "social-icon"><i class = "fab fa-github"></i></a>
+                            <!-- <a target = "_blank" href = "https://web.facebook.com/hassan.abdulhadi.572757" class = "social-icon"><i class="fa-brands fa-facebook"></i></a> -->
+                            <a target = "_blank" href = "https://www.linkedin.com/in/hasan-turki-43a60a215/" class = "social-icon"><i class="fa-brands fa-linkedin"></i></a>
+                            <!-- <a target = "_blank" href = "https://x.com/HasanAbdulhadiT" class = "social-icon"><i class="fa-brands fa-x-twitter"></i></i></a> -->
+                            <a target = "_blank" href = "https://www.youtube.com/@hasanabdulhadi8498" class = "social-icon"><i class="fa-brands fa-youtube"></i></i></a>
                         </div>
                     </div>
-                </section>
+
+                    <div class = "contact-form">
+                        <h3>Tell Me About Your Project</h3>
+                        <!-- <form id = "portfolio-contact-form">
+                            <div class = "form-group">
+                                <input type = "text" name = "name" placeholder = "Your Name" required>
+                            </div>
+
+                            <div class = "form-group">
+                                <input type = "email" name = "email" placeholder = "Your Email" required>
+                            </div>
+
+                            <div class = "form-group">
+                                <input type = "text" name = "subject" placeholder = "Subject" required>
+                            </div>
+
+                            <div class = "form-group">
+                                <textarea name = "message" rows = "5" placeholder = "Your Message" required></textarea>
+                            </div>
+
+                            <button type = "submit" class = "btn">Send Message</button>
+                        </form> -->
+
+                        <form id="portfolio-contact-form" novalidate>
+
+                            <div class="form-group">
+                                <input type="text" id="name" name="name" placeholder="Your Name" autocomplete="name" minlength="2" required>
+                            </div>
+
+                            <div class="form-group">
+                                <input type="email" id="email" name="email" placeholder="Your Email" autocomplete="email" required>
+                            </div>
+
+                            <div class="form-group">
+                                <input type="text" id="subject" name="subject" placeholder="Subject" minlength="3" required>
+                            </div>
+
+                            <div class="form-group">
+                                <textarea id="message" name="message" rows="5" placeholder="Your Message" minlength="10" required></textarea>
+                            </div>
+
+                            <!-- Honeypot spam protection -->
+                            <div class="form-honeypot" aria-hidden="true">
+                                <label for="website">Leave this field empty</label>
+                                <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
+                            </div>
+
+                            <button type="submit" class="btn" id="contact-submit-btn">Send Message</button>
+
+                            <!-- Form feedback -->
+                            <div id="contact-status" class="contact-status" role="status" aria-live="polite"></div>
+
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </section>
 
         <footer>
             <ul>
@@ -224,6 +257,15 @@
 
             <p class="copyright">&copy; All Rights Reserved, Hasan Turki</p>
         </footer>
+        <!-- EmailJS SDK -->
+
+        <script
+            src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+        </script>
+
+        <!-- Your JavaScript -->
+
         <script src="script.js"></script>
+
     </body>
 </html>
