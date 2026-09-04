@@ -17,8 +17,8 @@ EMAILJS CONTACT FORM
 ===================================================== */
 
 // EmailJS configuration
-const EMAILJS_PUBLIC_KEY = "0UVVdtW50MBrPF0yG";
-const EMAILJS_SERVICE_ID = "service_0c5f4d8";
+const EMAILJS_PUBLIC_KEY = "gkMQgHnKB0NwCFzbd";
+const EMAILJS_SERVICE_ID = "service_1a3cnqk";
 const EMAILJS_TEMPLATE_ID = "template_ujmma27";
 
 // Initialize EmailJS
