@@ -1,4 +1,3 @@
-
 /* =====================================================
    MOBILE NAVIGATION
 ===================================================== */
@@ -54,123 +53,116 @@ function showContactStatus(message, type = '') {
 
 if (contactForm) {
 
-    // Use the native EventTarget method directly.
-    // This avoids possible conflicts with an element/property
-    // named "addEventListener".
-    EventTarget.prototype.addEventListener.call(
-        contactForm,
-        'submit',
-        async (e) => {
+    contactForm.addEventListener('submit', async (e) => {
 
-            // Prevent normal browser form submission
-            e.preventDefault();
+        // Prevent normal browser form submission
+        e.preventDefault();
 
 
-            // Clear previous status
-            showContactStatus('', '');
+        // Clear previous status
+        showContactStatus('', '');
 
 
-            // Client-side validation
-            if (!contactForm.checkValidity()) {
+        // Client-side validation
+        if (!contactForm.checkValidity()) {
 
-                contactForm.reportValidity();
+            contactForm.reportValidity();
 
-                showContactStatus(
-                    'Please complete all required fields correctly.',
-                    'error'
-                );
-
-                return;
-            }
-
-
-            // Honeypot spam protection
-            const honeypot = contactForm.elements['website'];
-
-            if (honeypot && honeypot.value.trim() !== '') {
-
-                console.warn('Potential spam submission detected.');
-
-                showContactStatus(
-                    'Your message could not be submitted.',
-                    'error'
-                );
-
-                return;
-            }
-
-
-            // Capture form values
-            const formData = {
-                name: contactForm.elements['name'].value.trim(),
-                email: contactForm.elements['email'].value.trim(),
-                subject: contactForm.elements['subject'].value.trim(),
-                message: contactForm.elements['message'].value.trim()
-            };
-
-
-            // Disable submit button
-            if (submitButton) {
-                submitButton.disabled = true;
-                submitButton.textContent = 'Sending...';
-            }
-
-
-            // Show loading state
             showContactStatus(
-                'Sending your message...',
-                'loading'
+                'Please complete all required fields correctly.',
+                'error'
+            );
+
+            return;
+        }
+
+
+        // Honeypot spam protection
+        const honeypot = contactForm.elements['website'];
+
+        if (honeypot && honeypot.value.trim() !== '') {
+
+            console.warn('Potential spam submission detected.');
+
+            showContactStatus(
+                'Your message could not be submitted.',
+                'error'
+            );
+
+            return;
+        }
+
+
+        // Capture form values
+        const formData = {
+            name: contactForm.elements['name'].value.trim(),
+            email: contactForm.elements['email'].value.trim(),
+            subject: contactForm.elements['subject'].value.trim(),
+            message: contactForm.elements['message'].value.trim()
+        };
+
+
+        // Disable submit button
+        if (submitButton) {
+            submitButton.disabled = true;
+            submitButton.textContent = 'Sending...';
+        }
+
+
+        // Show loading state
+        showContactStatus(
+            'Sending your message...',
+            'loading'
+        );
+
+
+        try {
+
+            // Send email through EmailJS
+            const response = await emailjs.send(
+                EMAILJS_SERVICE_ID,
+                EMAILJS_TEMPLATE_ID,
+                formData
             );
 
 
-            try {
-
-                // Send email through EmailJS
-                const response = await emailjs.send(
-                    EMAILJS_SERVICE_ID,
-                    EMAILJS_TEMPLATE_ID,
-                    formData
-                );
+            console.log(
+                'EmailJS success:',
+                response.status,
+                response.text
+            );
 
 
-                console.log(
-                    'EmailJS success:',
-                    response.status,
-                    response.text
-                );
+            // Success message
+            showContactStatus(
+                'Message sent successfully! Thank you for contacting me.',
+                'success'
+            );
 
 
-                // Success message
-                showContactStatus(
-                    'Message sent successfully! Thank you for contacting me.',
-                    'success'
-                );
+            // Clear form
+            contactForm.reset();
 
 
-                // Clear form
-                contactForm.reset();
+        } catch (error) {
+
+            console.error('EmailJS Error:', error);
+
+            showContactStatus(
+                'Sorry, your message could not be sent. Please try again later.',
+                'error'
+            );
 
 
-            } catch (error) {
+        } finally {
 
-                console.error('EmailJS Error:', error);
-
-                showContactStatus(
-                    'Sorry, your message could not be sent. Please try again later.',
-                    'error'
-                );
-
-
-            } finally {
-
-                // Re-enable submit button
-                if (submitButton) {
-                    submitButton.disabled = false;
-                    submitButton.textContent = 'Send Message';
-                }
-
+            // Re-enable submit button
+            if (submitButton) {
+                submitButton.disabled = false;
+                submitButton.textContent = 'Send Message';
             }
 
         }
-    );
+
+    });
 }
