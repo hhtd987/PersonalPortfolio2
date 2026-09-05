@@ -445,7 +445,7 @@ section{
     margin-bottom: 2.5rem;
 }
 
-.build-together h3{
+.build-together h3, .contact-det h3{
     color: #288fd3;
 }
 
@@ -467,7 +467,7 @@ section{
     text-align: center;
 }
 
-.socials{
+.contact-det .socials{
     margin-top: 20px;
 }
 
